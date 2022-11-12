@@ -1,0 +1,100 @@
+[
+    {
+        "name": "Molecule Man",
+        "price": 29,
+        "image": "https://cdn.shopify.com/s/files/1/2358/2817/products/NikeDunkLowSE85NeptuneGreen_W_1600x.png?v=1660038828",
+        "releaseDate": "2023-10-20",
+        "colorName": "Oatmeal",
+        "colorHex": "#FA6530",
+        "resell": "very good",
+        "resellShop": [
+            "nike.com",
+            "adidas.com",
+            "kikicks.com"
+        ]
+        },
+        {
+        "name": "Molecule Man",
+        "price": 29,
+        "image": "https://static.nike.com/a/images/t_default/87c194e8-3c2b-49b3-b1bf-1b5659b76e24/custom-nike-air-zoom-pegasus-flyease-by-you.png",
+        "releaseDate": "2023-10-20",
+        "colorName": "Snow",
+        "colorHex": "#CED9D9",
+        "resell": "good",
+        "resellShop": [
+            "nike.com",
+            "adidas.com",
+            "kikicks.com"
+        ]
+        },
+        {
+        "name": "Molecule Man",
+        "price": 29,
+        "image": "https://cdn.shopify.com/s/files/1/2358/2817/products/New-Balance-550-Marquette-1_1600x.png?v=1667470573",
+        "releaseDate": "2023-10-20",
+        "colorName": "Sky",
+        "colorHex": "#7CD0DB",
+        "resell": "bad",
+        "resellShop": [
+            "nike.com",
+            "adidas.com",
+            "kikicks.com"
+        ]
+        },
+        {
+        "name": "Molecule Man",
+        "price": 29,
+        "image": "https://cdn.shopify.com/s/files/1/2358/2817/products/Adidas-Forum-Low-Black-White-1_540x.png?v=1651654475",
+        "releaseDate": "2023-10-20",
+        "colorName": "Sky",
+        "colorHex": "#7CD0DB",
+        "resell": "bad",
+        "resellShop": [
+            "nike.com",
+            "adidas.com",
+            "kikicks.com"
+            ]
+        },
+        {
+            "name": "Molecule Man",
+            "price": 29,
+            "image": "https://cdn.shopify.com/s/files/1/2358/2817/products/yeezy-700-wave-runner-solid-grey-101579_540x.png?v=1639393949",
+            "releaseDate": "2023-10-20",
+            "colorName": "Sky",
+            "colorHex": "#7CD0DB",
+            "resell": "bad",
+            "resellShop": [
+                "nike.com",
+                "adidas.com",
+                "kikicks.com"
+                ]
+        },
+        {
+            "name": "Molecule Man",
+            "price": 29,
+            "image": "https://cdn.shopify.com/s/files/1/2358/2817/products/new-balance-2002r-ganni-turtledove_600x.png?v=1654167659",
+            "releaseDate": "2023-10-20",
+            "colorName": "Sky",
+            "colorHex": "#7CD0DB",
+            "resell": "bad",
+            "resellShop": [
+                "nike.com",
+                "adidas.com",
+                "kikicks.com"
+                ]
+        },
+        {
+            "name": "Molecule Man",
+            "price": 29,
+            "image": "https://flipklub.com/data/uploads/2021/06/flipklub-new-balance-2002r-salehe-bembury-water-be-the-guide.png",
+            "releaseDate": "2023-10-20",
+            "colorName": "Sky",
+            "colorHex": "#7CD0DB",
+            "resell": "bad",
+            "resellShop": [
+                "nike.com",
+                "adidas.com",
+                "kikicks.com"
+                ]
+        }
+    ]
