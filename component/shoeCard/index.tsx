@@ -32,7 +32,7 @@ export function ShoeCard ({name, price, image, releaseDate, colorName, colorHex,
             <View style={styles.container}>
                 <Image source={{ uri: image}} style={styles.image}/>
                 <View style={styles.textContainer}>
-                    <Text style={styles.colorName}>{colorName}</Text>
+                    <Text style={[styles.colorName, {color: colorHex }]}>{colorName}</Text>
                     <Text style={styles.name}>{name}</Text>
                     <Text style={styles.resell}><Ionicons name="ellipse" style={styles.icons}/>{resell}</Text>
                 </View>
@@ -65,7 +65,6 @@ const styles = StyleSheet.create({
         overflow : 'hidden',
         fontWeight : '900',
         fontSize: '20',
-        color: 'black',
         marginBottom: 4,
     },
     resell: {

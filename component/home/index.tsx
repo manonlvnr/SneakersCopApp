@@ -15,7 +15,6 @@ export default function Home() {
 const styles = StyleSheet.create({
     bestOfTheWeek: {
         flex: 1, 
-        justifyContent: 'center', 
         alignItems: 'center',
     },
 });

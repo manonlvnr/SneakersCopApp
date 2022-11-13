@@ -15,7 +15,7 @@ export function BestOfTheWeek() {
                 renderItem={({ item }) => {
                     const { name, price, image, releaseDate, colorName, colorHex, resell, resellShop } = item;
                     return (
-                        <ShoeCard image={item.image} name={item.name} colorName={item.colorName} resell={item.resell}/>
+                        <ShoeCard {...item}/>
                     )
                 }}
             />
@@ -26,6 +26,7 @@ export function BestOfTheWeek() {
 const styles = StyleSheet.create({
     container: {
         paddingLeft: 10,
+        height: 400
     },
     title: {
         marginBottom: 8,

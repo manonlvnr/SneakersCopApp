@@ -19,8 +19,8 @@ export function ShoeInfo({route}: ShoesInfoProps) {
                 </View>
                 <View style={styles.rightContainer}>
                     <View style={styles.topText}>
-                        <Text style={styles.dropDate}>DROP DATE</Text>
-                        <Text style={styles.name}>{item.ResealDate}</Text>
+                        <Text style={styles.dropDate}>DROP DATE :</Text>
+                        <Text style={styles.releaseDate}>{item.releaseDate}</Text>
                     </View>
                     <View style={styles.bottomText}>
                         <Text style={styles.retail}>PRIX RETAIL:{item.price}</Text>
@@ -36,9 +36,7 @@ export function ShoeInfo({route}: ShoesInfoProps) {
                     <Ionicons name="star-outline" size="30"/>
                 </TouchableOpacity>
             </View>
-            <View>
-                <Tools/>
-            </View>
+            <Tools/>
         </View>
     )
 }
@@ -66,6 +64,11 @@ const styles = StyleSheet.create({
         padding: 8,
     },
     dropDate: {
+        textAlign:'right',
+        color: 'white',
+        fontWeight: '800',
+    },
+    releaseDate: {
         textAlign:'right',
         color: 'white',
         fontWeight: '800',
