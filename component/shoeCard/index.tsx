@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
@@ -13,8 +14,21 @@ interface  ShoeCardProps {
 }
 
 export function ShoeCard ({name, price, image, releaseDate, colorName, colorHex, resell, resellShop}: ShoeCardProps) {
+    const navigation = useNavigation();
+
+    const navigateToShoeInfo = () => {
+        // On créer un objet 'item' avec les informations qu'on
+        // souhaite envoyer à notre nouvelle page
+        navigation.navigate('ShoeInfo', {
+            item: { name, price, image, releaseDate, colorName, colorHex, resell, resellShop},
+        });
+        // On envoie l'url, les likes pour éviter de générer un autre random
+        // on envoie aussi l'information sur le like ainsi que l'id pour pouvoir
+        // télécharger les informations de l'author
+    };
+
     return (
-        <TouchableOpacity>
+        <TouchableOpacity onPress={navigateToShoeInfo}>
             <View style={styles.container}>
                 <Image source={{ uri: image}} style={styles.image}/>
                 <View style={styles.textContainer}>
@@ -51,7 +65,7 @@ const styles = StyleSheet.create({
         overflow : 'hidden',
         fontWeight : '900',
         fontSize: '20',
-        color: '#black',
+        color: 'black',
         marginBottom: 4,
     },
     resell: {

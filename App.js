@@ -4,9 +4,21 @@ import { StyleSheet } from 'react-native';
 import Home from './component/home';
 import Calendar from './component/calendar';
 import Account from './component/account';
+import { ShoeInfo } from './component/shoeInfo';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { createStackNavigator } from '@react-navigation/stack';
 
 const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
+
+function NavigateHome() {
+  return (
+    <Stack.Navigator>
+        <Stack.Screen name="Home" component={Home} options={{headerShown: false}} />
+        <Stack.Screen name="ShoeInfo" component={ShoeInfo} />
+    </Stack.Navigator>
+  )
+}
 
 export default function App() {
   return (
@@ -30,7 +42,7 @@ export default function App() {
           tabBarInactiveTintColor: '#C0C0C0',
         })}
         >        
-        <Tab.Screen name="Home" component={Home} />
+        <Tab.Screen name="Home" component={NavigateHome} />
         <Tab.Screen name="Calendar" component={Calendar} />
         <Tab.Screen name="Account" component={Account} />
       </Tab.Navigator>
