@@ -10,6 +10,7 @@ export function Tools() {
 
     return (
         <View>
+            <Text>OUTILS</Text>
             <View>
                 <Button title="Guide des tailles" onPress={() => refRBSheet.current.open()} />
                 <RBSheet
@@ -52,6 +53,5 @@ export function Tools() {
                 </RBSheet>
             </View>
         </View>
-
     );
 }

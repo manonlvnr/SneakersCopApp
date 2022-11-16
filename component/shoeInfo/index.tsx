@@ -1,5 +1,6 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { AsyncStorage, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { RetailersList } from "./retailersList";
 import { Tools } from "./tools";
 
 interface ShoesInfoProps {
@@ -9,8 +10,32 @@ interface ShoesInfoProps {
 export function ShoeInfo({route}: ShoesInfoProps) {
     const { item } = route.params;
 
+//     console.log(item);
+//     const json = JSON.parse(JSON.stringify(item));
+//     console.log(json);
+
+//     const storeData = async (value) => {
+//         try {
+//           await AsyncStorage.setItem(json, value)
+//         } catch (e) {
+//           // saving error
+//         }
+//       }
+
+//       const getData = async () => {
+//         try {
+//           const value = await AsyncStorage.getItem(json)
+//           if(value !== null) {
+//             // value previously stored
+//             console.log(value);
+//         }
+//     } catch(e) {
+//         // error reading value
+//     }
+// }
+
     return (
-        <View style={styles.mainContainer}>
+        <ScrollView style={styles.mainContainer}>
             <View style={styles.topContainer}>
                 <View style={styles.leftContainer}>
                     <Text style={styles.name}>{item.name}</Text>
@@ -29,7 +54,7 @@ export function ShoeInfo({route}: ShoesInfoProps) {
             </View>
             <Image style={styles.image} source={{ uri: item.image }} />
             <View style={styles.likeShareContainer}>
-                <TouchableOpacity style={styles.ShareContainer}>
+                <TouchableOpacity style={styles.ShareContainer} onPress={() => storeData(item)}>
                     <Ionicons name="share-outline" size="30"/>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.likeContainer}>
@@ -37,7 +62,8 @@ export function ShoeInfo({route}: ShoesInfoProps) {
                 </TouchableOpacity>
             </View>
             <Tools/>
-        </View>
+            <RetailersList/>
+        </ScrollView>
     )
 }
 

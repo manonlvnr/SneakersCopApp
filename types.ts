@@ -8,3 +8,11 @@ export interface RandomSneakersJSON {
     resell: string,
     resellShop: string[],
   }
+
+export interface RandomShopJSON {
+  retailerName: string,
+  type: string,
+  logo: string,
+  available: boolean,
+  link: string
+}
