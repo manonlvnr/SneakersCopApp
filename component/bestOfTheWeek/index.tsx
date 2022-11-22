@@ -21,7 +21,7 @@ export function BestOfTheWeek() {
                 horizontal
                 data={data}
                 renderItem={({ item }) => {
-                    const { name, price, image, releaseDate, colorName, colorHex, resell, resellShop } = item;
+                    const { name, price, image, releaseDate, colorName, colorHex, resell } = item;
                     return (
                         <ShoeCard {...item}/>
                     )

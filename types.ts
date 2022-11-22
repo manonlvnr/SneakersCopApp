@@ -6,7 +6,6 @@ export interface RandomSneakersJSON {
     colorName: string,
     colorHex: string,
     resell: string,
-    resellShop: string[],
   }
 
 export interface RandomShopJSON {

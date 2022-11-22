@@ -13,7 +13,7 @@ export function BestResell() {
                 horizontal
                 data={data}
                 renderItem={({ item }) => {
-                    const { name, price, image, releaseDate, colorName, colorHex, resell, resellShop } = item;
+                    const { name, price, image, releaseDate, colorName, colorHex, resell } = item;
                     if (item.resell == "good" || item.resell == "very good")  {
                     return (
                         <ShoeCard {...item}/>

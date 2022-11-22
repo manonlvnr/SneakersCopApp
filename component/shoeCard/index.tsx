@@ -23,7 +23,7 @@ export function ShoeCard ({name, price, image, releaseDate, colorName, colorHex,
         // On créer un objet 'item' avec les informations qu'on
         // souhaite envoyer à notre nouvelle page
         navigation.navigate('ShoeInfo', {
-            item: { name, price, image, releaseDate, colorName, colorHex, resell, resellShop, onFavorite},
+            item: { name, price, image, releaseDate, colorName, colorHex, resell, onFavorite},
         });
     };
 
