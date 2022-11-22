@@ -1,12 +1,11 @@
-import { Image, ScrollView, Share, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import { Alert, Image, ScrollView, Share, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {Ionicons} from '@expo/vector-icons';
 import { RetailersList } from "./retailersList";
 import { Tools } from "./tools";
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { useState, forwardRef, useImperativeHandle, useEffect } from "react";
 import { ResellInfo } from "./resellInfo";
 import { LikePanel } from "./likePanel";
-import { style } from "glamor";
+import { useNavigation } from "@react-navigation/native";
+import { useAddToFavorite } from '../../hooks/useAddToFavorite';
 
 interface ShoesInfoProps {
     route: any;
@@ -18,40 +17,6 @@ export function ShoeInfo({route}: ShoesInfoProps) {
     const shareImage = async () =>{
         Share.share({ message:'Check ces sneakers elles sont top!', title:'Skeakers' });
     }
-
-    const json = JSON.stringify(route.params);
-
-    const [favoriteSneakers, setfavoriteSneakers] = useState('');
-
-    const saveData = async () => {
-        try {
-            await AsyncStorage.setItem("sneaker", json)
-            alert('Data successfully saved')
-        } catch (e) {
-            alert('Failed to save the data to the storage')
-        }
-    }
-
-    const readData = async () => {
-        try {
-        const value = await AsyncStorage.getItem("sneaker");
-
-        if (value !== null) {
-            const favorites = JSON.parse(value);
-            setfavoriteSneakers(favorites);
-        }
-        } catch (e) {
-        alert('Failed to fetch the input from storage');
-        }
-    };
-
-    useEffect(() => {
-        readData();
-    }, []);
-    
-
-// console.log(favoriteSneakers);
-
 
     return (
         <ScrollView style={styles.mainContainer}>
@@ -75,10 +40,10 @@ export function ShoeInfo({route}: ShoesInfoProps) {
             <LikePanel/>
             <View style={styles.likeShareContainer}>
                 <TouchableOpacity style={[styles.ShareContainer, styles.shadow]} onPress={() => shareImage() }>
-                    <Ionicons name="share-outline" size="30"/>
+                    <Ionicons name="share-outline" size={30}/>
                 </TouchableOpacity>
-                <TouchableOpacity style={[styles.likeContainer, styles.shadow]} onPress={saveData}>
-                    <Ionicons name="star-outline" size="30"/>
+                <TouchableOpacity style={[styles.likeContainer, styles.shadow]} >
+                    <Ionicons name="star-outline" size={30}/>
                 </TouchableOpacity>
             </View>
             <ResellInfo/>

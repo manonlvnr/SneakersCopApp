@@ -1,7 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
-import { forwardRef, useEffect, useImperativeHandle, useState } from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import {Ionicons} from '@expo/vector-icons';
 
 
 
@@ -13,36 +12,32 @@ interface  ShoeCardProps {
     colorName: string,
     colorHex: string,
     resell: string,
-    onFavorite: () => void,
+    onFavorite?: () => void,
+    isDark?: boolean
     } 
 
-export function ShoeCard ({name, price, image, releaseDate, colorName, colorHex, resell, onFavorite}: ShoeCardProps) {
+export function ShoeCard ({name, price, image, releaseDate, colorName, colorHex, resell, onFavorite, isDark}: ShoeCardProps) {
     const navigation = useNavigation();
 
     const navigateToShoeInfo = () => {
         // On créer un objet 'item' avec les informations qu'on
         // souhaite envoyer à notre nouvelle page
         navigation.navigate('ShoeInfo', {
-            item: { name, price, image, releaseDate, colorName, colorHex, resell, onFavorite},
+            item: { name, price, image, releaseDate, colorName, colorHex, resell},
         });
     };
 
-    const [toggleStyle, setlighStyle] = useState(true);
-    const lightStyle = () => {
-        setlighStyle(true);
-    };
-
-
     return (
+
         <TouchableOpacity onPress={navigateToShoeInfo}>
-            <View style={toggleStyle ? styles.container : styles.containerDark }>
-                <Image source={{ uri: image}} style={styles.image}/>
-                <View style={toggleStyle ? styles.textContainer : styles.textContainerDark}>
-                    <Text style={toggleStyle ? [styles.colorName, {color: colorHex }] : [styles.colorNameDark, {color: colorHex }]}>{colorName}</Text>
-                    <Text style={toggleStyle ? styles.name : styles.nameDark}>{name}</Text>
-                    <Text style={toggleStyle ? styles.price : styles.priceDark}>{price}</Text>
-                    <Text style={toggleStyle ? styles.resell : styles.resellDark}><Ionicons name="ellipse" style={styles.icons}/>{resell}</Text>
-                </View>
+                <View style={isDark ? styles.containerDark : styles.container }>
+                    <Image source={{ uri: image}} style={styles.image}/>
+                    <View style={isDark ? styles.textContainerDark : styles.textContainer}>
+                        <Text style={isDark ? [styles.colorNameDark, {color: colorHex }] : [styles.colorName, {color: colorHex }]}>{colorName}</Text>
+                        <Text style={isDark ? styles.nameDark : styles.name}>{name}</Text>
+                        <Text style={isDark ? styles.priceDark : styles.price}>{price} €</Text>
+                        <Text style={isDark ? styles.resellDark : styles.resell}><Ionicons name="ellipse" style={styles.icons}/>{resell}</Text>
+                    </View>
             </View>
         </TouchableOpacity>
     )
@@ -50,21 +45,22 @@ export function ShoeCard ({name, price, image, releaseDate, colorName, colorHex,
 
 const styles = StyleSheet.create({
     container: {
-        marginRight: 10,
-        backgroundColor: '#fff',
-        borderRadius: 18,
-        padding: 15,
+        height: 270,
+        paddingTop: 70,
+        display:"flex",
     },
     containerDark: {
-        marginRight: 10,
-        backgroundColor: 'black',
-        borderRadius: 18,
-        padding: 15,
+        height: 270,
+        paddingTop: 70,
+        display:"flex",
     },
     image: {
         width: 200,
-        height: 200,
-        resizeMode: 'contain',
+        height: 150,
+        position:'absolute',
+        zIndex: 10,
+        top: -15,
+        alignSelf:'center',
     },
     name: {
         width: 180,
@@ -77,7 +73,7 @@ const styles = StyleSheet.create({
         width: 180,
         overflow : 'hidden',
         fontWeight : '600',
-        color: '#black',
+        color: '#fff',
         marginBottom: 15,
     },
     colorName: {
@@ -101,18 +97,38 @@ const styles = StyleSheet.create({
         color: '#black',
     },
     resellDark: {
-
+        width: 180,
+        overflow : 'hidden',
+        fontWeight : '600',
+        color: '#fff',
     },
     textContainer: {
-        paddingBottom: 10,
+        marginRight: 15,
+        backgroundColor: '#fff',
+        borderRadius: 18,
+        paddingTop: 55,
+        paddingBottom: 25,
+        paddingLeft: 20,
+        paddingRight: 50,
+        zIndex: -1,
     },
     textContainerDark: {
-        paddingBottom: 10,
+        marginRight: 15,
+        backgroundColor: '#1C1C1C',
+        borderRadius: 18,
+        paddingTop: 55,
+        paddingBottom: 25,
+        paddingLeft: 20,
+        paddingRight: 50,
+        zIndex: -1,
     },
     price: {
         paddingBottom: 10,
+        fontWeight : '600',
     },
     priceDark: {
         paddingBottom: 10,
+        fontWeight : '600',
+        color: '#fff',
     },
 })

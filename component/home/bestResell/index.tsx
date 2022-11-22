@@ -16,7 +16,7 @@ export function BestResell() {
                     const { name, price, image, releaseDate, colorName, colorHex, resell } = item;
                     if (item.resell == "good" || item.resell == "very good")  {
                     return (
-                        <ShoeCard {...item}/>
+                        <ShoeCard {...item} isDark/>
                     ) }
                 }}
             />
@@ -27,11 +27,12 @@ export function BestResell() {
 const styles = StyleSheet.create({
     container: {
         paddingLeft: 10,
-        marginBottom: 20,
+        paddingVertical: 30,
+        backgroundColor:"#00ffb0",
     },
     title: {
-        marginBottom: 8,
-        fontSize: 30,
+        fontSize: 25,
         fontWeight: '900',
+        maxWidth: 250,
     }
 })

@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from "react-native";
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import {Ionicons} from '@expo/vector-icons';
 
 
 export function ResellInfo() {
@@ -9,11 +9,17 @@ export function ResellInfo() {
             <View style={styles.container}>
                 <View style={styles.resellContainer}>
                     <Text style={styles.resellTitle}>Indice de resell</Text>
-                    <Text style={styles.resellText}><Ionicons name="ellipse" size="20" style={styles.resellIcon}/> Bon resell</Text>
+                    <View style={[styles.resellTextContainer, styles.shadow]}>
+                        <Ionicons name="ellipse" size={20}/> 
+                        <Text>Bon resell</Text>
+                    </View>
                 </View>
                 <View style={styles.priceContainer}>
                     <Text style={styles.priceTitle}>Estimations</Text>
-                    <Text style={styles.priceText}><Ionicons name="cash-outline" size="20" style={styles.priceIcon}/> 230€</Text>
+                    <View style={[styles.priceTextContainer, styles.shadow]}>
+                        <Ionicons name="cash-outline" size={20}/> 
+                        <Text>230€</Text>
+                    </View>
                 </View>
             </View>
         </View>
@@ -39,12 +45,14 @@ const styles = StyleSheet.create({
     priceContainer: {
         width: "50%",
     },
-    priceText: {
-        borderWidth: 1,
+    priceTextContainer: {
         borderRadius: 20,
-        borderColor: '#C0C0C0',
-        padding: 15,
-        textAlign: "center",
+        padding: 20,
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#fff'
     },
     priceTitle: {
         fontSize: 18,
@@ -55,19 +63,21 @@ const styles = StyleSheet.create({
         width: "50%",
         marginRight: 20,
     },
-    resellText: {
-        borderWidth: 1,
+    resellTextContainer: {
         borderRadius: 20,
-        borderColor: '#C0C0C0',
-        padding: 15,
-        textAlign: "center",
+        padding: 20,
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#fff'
     },
     resellTitle: {
         fontSize: 18,
         paddingBottom: 8,
         paddingLeft: 8,
     },
-     shadow: {
+    shadow: {
         shadowColor: '#171717',
         shadowOffset: {width: -2, height: 4},
         shadowOpacity: 0.2,

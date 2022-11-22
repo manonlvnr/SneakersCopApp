@@ -1,9 +1,9 @@
 import { Button, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import RBSheet from "react-native-raw-bottom-sheet";
-import React, { useRef } from "react";
+import React, { Fragment, useRef, useState } from "react";
 import { Size } from "./size";
 import { Lexicon } from "./lexicon";
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import {Ionicons} from '@expo/vector-icons';
 
 
 export function Tools() {
@@ -14,53 +14,45 @@ export function Tools() {
         <View style={styles.mainContainer}>
             <Text style={styles.title}>OUTILS</Text>
             <View style={styles.container}>
-                <View style={[styles.sizeContainer, styles.shadow]}>
-                    <Ionicons name="list-outline" size="25" style={styles.sizeIcon}/>
-                    <TouchableOpacity onPress={() => refRBSheet.current.open()}>
-                        <Text>Guide des tailles</Text>
-                    </TouchableOpacity>
+                <TouchableOpacity onPress={() => refRBSheet.current.open()} style={[styles.sizeContainer, styles.shadow]}>
+                    <Ionicons name="list-outline" size={25} style={styles.sizeIcon}/>
+                    <Text style={styles.sizeText}>Guide des tailles</Text>
                     <RBSheet
                         ref={refRBSheet}
                         closeOnDragDown={true}
                         closeOnPressMask={true}
                         customStyles={{
-                        wrapper: {
-                            backgroundColor: "transparent",
-                        },
-                        draggableIcon: {
-                            backgroundColor: "#000"
-                        }
+                            wrapper: {
+                                backgroundColor: "rgba(0, 0, 0, 0.5)",
+                            },
+                            draggableIcon: {
+                                backgroundColor: "#000"
+                            }
                         }}
-                    >
+                        >
                         <Size/>
                     </RBSheet>
-                </View>
-
-                <View style={[styles.lexicalContainer, styles.shadow]} elevation={5}>
-                    <Ionicons name="book-outline" size="25" style={styles.lexicalIcon}/>
-                    <TouchableOpacity onPress={() => refRBSheet2.current.open()}>
-                        <Text>Lexique de la sneaker</Text>
-                    </TouchableOpacity>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => refRBSheet2.current.open()} style={[styles.lexicalContainer, styles.shadow]}>
+                    <Ionicons name="book-outline" size={25} style={styles.lexicalIcon}/>
+                    <Text style={styles.lexicalText}>Lexique de la sneaker</Text>
                     <RBSheet
                         ref={refRBSheet2}
                         closeOnDragDown={true}
                         closeOnPressMask={true}
-                        animationType={'slide'}
+                        height={600}
                         customStyles={{
-                        wrapper: {
-                            backgroundColor: "transparent",
-                        },
-                        container: {
-                            height: 600,
-                        },
-                        draggableIcon: {
-                            backgroundColor: "#000"
-                        }
-                        }}
-                    >
+                            wrapper: {
+                                backgroundColor: "rgba(0, 0, 0, 0.5)",
+                            },
+                            draggableIcon: {
+                                backgroundColor: "#000"
+                            }
+                            }}
+                            >
                         <Lexicon/>
                     </RBSheet>
-                </View>
+                </TouchableOpacity>
             </View>
         </View>
     );
@@ -94,6 +86,9 @@ const styles = StyleSheet.create({
     sizeIcon: {
         padding: 1,
     },
+    sizeText: {
+        fontSize: 12,
+    },
     lexicalContainer: {
         display:"flex",
         flexDirection:"row",
@@ -105,6 +100,9 @@ const styles = StyleSheet.create({
     },
     lexicalIcon: {
         padding: 2,
+    },
+    lexicalText: {
+        fontSize: 12,
     },
     shadow: {
         shadowColor: '#171717',

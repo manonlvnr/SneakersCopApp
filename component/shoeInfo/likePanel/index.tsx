@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {Ionicons} from '@expo/vector-icons';
 import * as Random from 'expo-random';
 
 export function LikePanel() {
@@ -12,14 +12,32 @@ export function LikePanel() {
 
     return (
         <View style={[styles.mainContainer, styles.shadow]}>
-            <View style={styles.upContainer}>
-                <Ionicons name="thumbs-up" size="30" style={styles.upIcon}/>
-                <Text>{upLikeNumber}</Text>
-            </View>
-            <View style={styles.downContainer}>
-                <Text>{downLikeNumber}</Text>
-                <Ionicons name="thumbs-down" size="30" style={styles.downIcon}/>
-            </View>
+            <TouchableOpacity onPress={() => setupLike(!upLike) }>
+                {upLike ? (
+                        <View style={styles.upContainer}>
+                            <Ionicons name="thumbs-up" size={30} color="#00ffb0" style={styles.upIcon}/>
+                            <Text>{upLikeNumber}</Text>
+                        </View>
+                    ) : (
+                        <View style={styles.upContainer}>
+                            <Ionicons name="thumbs-up" size={30} color="black" style={styles.upIcon}/>
+                            <Text>{upLikeNumber}</Text>
+                        </View>
+                )}
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => setdownLike(!downLike) }>
+                {downLike ? (
+                        <View style={styles.downContainer}>
+                            <Text>{downLikeNumber}</Text>
+                            <Ionicons name="thumbs-down" size={30} color="red" style={styles.downIcon}/>
+                        </View>
+                    ) : (
+                        <View style={styles.downContainer}>
+                            <Text>{downLikeNumber}</Text>
+                            <Ionicons name="thumbs-down" size={30} color="black" style={styles.downIcon}/>
+                        </View>
+                )}
+            </TouchableOpacity>
         </View>
     )
 }
