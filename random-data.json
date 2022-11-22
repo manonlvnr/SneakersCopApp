@@ -6,12 +6,7 @@
         "releaseDate": "2023-10-20",
         "colorName": "Oatmeal",
         "colorHex": "#FA6530",
-        "resell": "very good",
-        "resellShop": [
-            "nike.com",
-            "adidas.com",
-            "kikicks.com"
-        ]
+        "resell": "very good"
         },
         {
         "name": "Molecule Man",
@@ -20,12 +15,7 @@
         "releaseDate": "2023-10-20",
         "colorName": "Snow",
         "colorHex": "#CED9D9",
-        "resell": "good",
-        "resellShop": [
-            "nike.com",
-            "adidas.com",
-            "kikicks.com"
-        ]
+        "resell": "good"
         },
         {
         "name": "Molecule Man",
@@ -34,12 +24,7 @@
         "releaseDate": "2023-10-20",
         "colorName": "Sky",
         "colorHex": "#7CD0DB",
-        "resell": "bad",
-        "resellShop": [
-            "nike.com",
-            "adidas.com",
-            "kikicks.com"
-        ]
+        "resell": "bad"
         },
         {
         "name": "Molecule Man",
@@ -48,12 +33,7 @@
         "releaseDate": "2023-10-20",
         "colorName": "Sky",
         "colorHex": "#7CD0DB",
-        "resell": "bad",
-        "resellShop": [
-            "nike.com",
-            "adidas.com",
-            "kikicks.com"
-            ]
+        "resell": "bad"
         },
         {
             "name": "Molecule Man",
@@ -62,12 +42,7 @@
             "releaseDate": "2023-10-20",
             "colorName": "Sky",
             "colorHex": "#7CD0DB",
-            "resell": "bad",
-            "resellShop": [
-                "nike.com",
-                "adidas.com",
-                "kikicks.com"
-                ]
+            "resell": "bad"
         },
         {
             "name": "Molecule Man",
@@ -76,12 +51,7 @@
             "releaseDate": "2023-10-20",
             "colorName": "Sky",
             "colorHex": "#7CD0DB",
-            "resell": "bad",
-            "resellShop": [
-                "nike.com",
-                "adidas.com",
-                "kikicks.com"
-                ]
+            "resell": "bad"
         },
         {
             "name": "Molecule Man",
@@ -90,11 +60,6 @@
             "releaseDate": "2023-10-20",
             "colorName": "Sky",
             "colorHex": "#7CD0DB",
-            "resell": "bad",
-            "resellShop": [
-                "nike.com",
-                "adidas.com",
-                "kikicks.com"
-                ]
+            "resell": "bad"
         }
     ]

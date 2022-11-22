@@ -42,7 +42,7 @@ export default function App() {
           tabBarInactiveTintColor: '#C0C0C0',
         })}
         >        
-        <Tab.Screen name="Home" component={NavigateHome} />
+        <Tab.Screen name="Home" component={NavigateHome} options={{headerShown: false}}/>
         <Tab.Screen name="Calendar" component={Calendar} />
         <Tab.Screen name="Account" component={Account} />
       </Tab.Navigator>

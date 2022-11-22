@@ -7,7 +7,7 @@ const data = require('../../../random-shop-data.json') as RandomShopJSON[];
 
 export function RetailersList() {
     return (
-        <View style={styles.container}>
+        <View>
             <Text style={styles.title}>LISTE DES RETAILERS</Text>
             <FlatList 
                 data={data}
@@ -17,6 +17,7 @@ export function RetailersList() {
                         <RetailerCard {...item}/>
                     )
                 }}
+                style={[styles.container, styles.shadow]}
             />
         </View>
     )
@@ -25,10 +26,18 @@ export function RetailersList() {
 const styles = StyleSheet.create({
     container: {
         paddingLeft: 10,
+        marginBottom: 40,
     },
     title: {
-        marginBottom: 8,
-        fontSize: 30,
-        fontWeight: '900',
-    }
+        marginBottom: 20,
+        marginTop: 20,
+        fontSize: 20,
+        fontWeight: '800',
+    },
+    shadow: {
+        shadowColor: '#171717',
+        shadowOffset: {width: -2, height: 4},
+        shadowOpacity: 0.2,
+        shadowRadius: 3,
+    },
 })

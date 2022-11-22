@@ -1,7 +1,12 @@
-import { AsyncStorage, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Image, ScrollView, Share, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { RetailersList } from "./retailersList";
 import { Tools } from "./tools";
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useState, forwardRef, useImperativeHandle, useEffect } from "react";
+import { ResellInfo } from "./resellInfo";
+import { LikePanel } from "./likePanel";
+import { style } from "glamor";
 
 interface ShoesInfoProps {
     route: any;
@@ -10,36 +15,50 @@ interface ShoesInfoProps {
 export function ShoeInfo({route}: ShoesInfoProps) {
     const { item } = route.params;
 
-//     console.log(item);
-//     const json = JSON.parse(JSON.stringify(item));
-//     console.log(json);
+    const shareImage = async () =>{
+        Share.share({ message:'Check ces sneakers elles sont top!', title:'Skeakers' });
+    }
 
-//     const storeData = async (value) => {
-//         try {
-//           await AsyncStorage.setItem(json, value)
-//         } catch (e) {
-//           // saving error
-//         }
-//       }
+    const json = JSON.stringify(route.params);
 
-//       const getData = async () => {
-//         try {
-//           const value = await AsyncStorage.getItem(json)
-//           if(value !== null) {
-//             // value previously stored
-//             console.log(value);
-//         }
-//     } catch(e) {
-//         // error reading value
-//     }
-// }
+    const [favoriteSneakers, setfavoriteSneakers] = useState('');
+
+    const saveData = async () => {
+        try {
+            await AsyncStorage.setItem("sneaker", json)
+            alert('Data successfully saved')
+        } catch (e) {
+            alert('Failed to save the data to the storage')
+        }
+    }
+
+    const readData = async () => {
+        try {
+        const value = await AsyncStorage.getItem("sneaker");
+
+        if (value !== null) {
+            const favorites = JSON.parse(value);
+            setfavoriteSneakers(favorites);
+        }
+        } catch (e) {
+        alert('Failed to fetch the input from storage');
+        }
+    };
+
+    useEffect(() => {
+        readData();
+    }, []);
+    
+
+// console.log(favoriteSneakers);
+
 
     return (
         <ScrollView style={styles.mainContainer}>
             <View style={styles.topContainer}>
                 <View style={styles.leftContainer}>
                     <Text style={styles.name}>{item.name}</Text>
-                    <Text style={styles.colorName}>{item.colorName}</Text>
+                    <Text style={[styles.colorName, {color: item.colorHex }]}>{item.colorName}</Text>
                     <Text style={styles.resell}><Ionicons name="ellipse"/>{item.resell}</Text>
                 </View>
                 <View style={styles.rightContainer}>
@@ -48,19 +67,21 @@ export function ShoeInfo({route}: ShoesInfoProps) {
                         <Text style={styles.releaseDate}>{item.releaseDate}</Text>
                     </View>
                     <View style={styles.bottomText}>
-                        <Text style={styles.retail}>PRIX RETAIL:{item.price}</Text>
+                        <Text style={styles.retail}>PRIX RETAIL: {item.price}€</Text>
                     </View>
                 </View>
             </View>
             <Image style={styles.image} source={{ uri: item.image }} />
+            <LikePanel/>
             <View style={styles.likeShareContainer}>
-                <TouchableOpacity style={styles.ShareContainer} onPress={() => storeData(item)}>
+                <TouchableOpacity style={[styles.ShareContainer, styles.shadow]} onPress={() => shareImage() }>
                     <Ionicons name="share-outline" size="30"/>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.likeContainer}>
+                <TouchableOpacity style={[styles.likeContainer, styles.shadow]} onPress={saveData}>
                     <Ionicons name="star-outline" size="30"/>
                 </TouchableOpacity>
             </View>
+            <ResellInfo/>
             <Tools/>
             <RetailersList/>
         </ScrollView>
@@ -85,18 +106,19 @@ const styles = StyleSheet.create({
     },
     bottomText: {
         backgroundColor: '#00ffb0',
-        borderBottomLeftRadius: 18,
-        borderBottomRightRadius: 18,
-        padding: 8,
+        borderBottomLeftRadius: 10,
+        borderBottomRightRadius: 10,
+        padding: 10,
     },
     dropDate: {
         textAlign:'right',
         color: 'white',
         fontWeight: '800',
+        paddingBottom: 4,
     },
     releaseDate: {
         textAlign:'right',
-        color: 'white',
+        color: '#00ffb0',
         fontWeight: '800',
     },
     retail: {
@@ -105,46 +127,59 @@ const styles = StyleSheet.create({
 
     },
     topText: {
-        borderTopLeftRadius: 18,
-        borderTopRightRadius: 18,
+        borderTopLeftRadius: 10,
+        borderTopRightRadius: 10,
         backgroundColor: 'black',
-        padding: 8,
+        padding: 10,
     },
     image: {
         resizeMode: 'cover',
         height: 200,
         width: '100%',
+        marginBottom: 40,
     },
     resell: {
-        
+        textTransform: 'uppercase',
+        fontWeight: '700',
+        fontSize: 12,
     },
     colorName: {
+        paddingBottom: 8,
+        textTransform: 'uppercase',
+        fontWeight: '800',
+        fontSize: 25,
     },
     name: {
-        padding: 8,
+        paddingBottom: 8,
+        textTransform: 'uppercase',
+        fontWeight: '700',
+        fontSize: 15,
     },
     likeShareContainer: {
         width:'100%',
         display: 'flex',
         justifyContent: 'space-around',
         flexDirection: 'row',
+        marginBottom: 20,
     },
     likeContainer: {
-        borderWidth: 1,
-        borderRadius: 50,
-        borderColor: '#C0C0C0',
-        height: 50,
+        borderRadius: 20,
+        padding: 15,
         width: '45%',
-        padding: 10,
         alignItems: 'center',
+        backgroundColor: "white",
     },
     ShareContainer: {
-        borderWidth: 1,
-        borderRadius: 50,
-        borderColor: '#C0C0C0',
-        height: 50,
+        borderRadius: 20,
+        padding: 15,
         width: '45%',
-        padding: 10,
         alignItems: 'center',
+        backgroundColor: "white",
+    },
+    shadow: {
+        shadowColor: '#171717',
+        shadowOffset: {width: -2, height: 4},
+        shadowOpacity: 0.2,
+        shadowRadius: 3,
     },
 });

@@ -42,13 +42,13 @@ const styles = StyleSheet.create({
         resizeMode: 'contain',
     },
     available: {
-        backgroundColor: 'green',
+        backgroundColor: '#00ffb0',
         padding: 4,
-        color: 'white',
+        color: 'black',
         fontWeight: '900',
     },
     unailable: {
-        backgroundColor: 'red',
+        backgroundColor: 'black',
         padding: 4,
         color: 'white',
         fontWeight: '900',
