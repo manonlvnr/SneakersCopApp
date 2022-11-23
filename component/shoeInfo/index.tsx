@@ -6,6 +6,7 @@ import { ResellInfo } from "./resellInfo";
 import { LikePanel } from "./likePanel";
 import { useNavigation } from "@react-navigation/native";
 import { useAddToFavorite } from '../../hooks/useAddToFavorite';
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 interface ShoesInfoProps {
     route: any;
