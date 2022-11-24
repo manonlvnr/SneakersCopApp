@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import {Ionicons} from '@expo/vector-icons';
 import * as Random from 'expo-random';
+import { Buffer } from "buffer";
 
 export function LikePanel() {
     const [upLike, setupLike] = useState(false);
@@ -10,9 +11,19 @@ export function LikePanel() {
     const [downLike, setdownLike] = useState(false);
     const downLikeNumber = useMemo (()=>Random.getRandomBytes(1), []);
 
+    const[countup,setCountup]=useState(upLikeNumber);
+    const inc=()=>{
+        // const up: number = upLikeNumber;
+        // setCountup(up +1);
+        // var string = Buffer.from(upLikeNumber).toString();
+        // console.log('tata', string);
+    }
+
+
+
     return (
         <View style={[styles.mainContainer, styles.shadow]}>
-            <TouchableOpacity onPress={() => setupLike(!upLike) }>
+            <TouchableOpacity onPress={() => {setupLike(!upLike); inc()}}>
                 {upLike ? (
                         <View style={styles.upContainer}>
                             <Ionicons name="thumbs-up" size={30} color="#00ffb0" style={styles.upIcon}/>

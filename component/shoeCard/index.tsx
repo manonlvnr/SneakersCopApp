@@ -12,16 +12,13 @@ interface  ShoeCardProps {
     colorName: string,
     colorHex: string,
     resell: string,
-    onFavorite?: () => void,
     isDark?: boolean
     } 
 
-export function ShoeCard ({name, price, image, releaseDate, colorName, colorHex, resell, onFavorite, isDark}: ShoeCardProps) {
+export function ShoeCard ({name, price, image, releaseDate, colorName, colorHex, resell, isDark}: ShoeCardProps) {
     const navigation = useNavigation();
 
     const navigateToShoeInfo = () => {
-        // On créer un objet 'item' avec les informations qu'on
-        // souhaite envoyer à notre nouvelle page
         navigation.navigate('ShoeInfo', {
             item: { name, price, image, releaseDate, colorName, colorHex, resell},
         });
@@ -80,14 +77,14 @@ const styles = StyleSheet.create({
         width: 180,
         overflow : 'hidden',
         fontWeight : '900',
-        fontSize: '20',
+        fontSize: 20,
         marginBottom: 4,
     },
     colorNameDark: {
         width: 180,
         overflow : 'hidden',
         fontWeight : '900',
-        fontSize: '20',
+        fontSize: 20,
         marginBottom: 4,
     },
     resell: {

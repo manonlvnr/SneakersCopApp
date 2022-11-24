@@ -1,8 +1,11 @@
 import { Text, View } from "react-native";
 import { Agenda } from "react-native-calendars";
 import { ShoeCard } from "../shoeCard";
+import { RandomSneakersJSON } from "../../types";
 
-export default function Calendar() {
+const data = require('../../random-data.json') as RandomSneakersJSON[];
+
+export default function Calendar({route}) {
     return (
         <Agenda
             // The list of items that have to be displayed in agenda. If you want to render item as empty date

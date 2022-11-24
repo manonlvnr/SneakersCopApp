@@ -1,11 +1,14 @@
 import { Text, View } from "react-native";
-import Favorites from "./favorites";
+import FavoritesList from "./favorites";
 
 export default function Account() {
     return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Account!</Text>
-        <Favorites />
+    <View>
+        <View></View>
+        <Text>MANON</Text>
+        <View>
+            <FavoritesList/>
+        </View>
     </View>
     );
 }

@@ -4,9 +4,11 @@ import { RetailersList } from "./retailersList";
 import { Tools } from "./tools";
 import { ResellInfo } from "./resellInfo";
 import { LikePanel } from "./likePanel";
-import { useNavigation } from "@react-navigation/native";
-import { useAddToFavorite } from '../../hooks/useAddToFavorite';
-import AsyncStorage from '@react-native-async-storage/async-storage'
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useEffect, useState } from "react";
+import { useFavorites } from "../../context/favorites";
+
+
 
 interface ShoesInfoProps {
     route: any;
@@ -14,10 +16,18 @@ interface ShoesInfoProps {
 
 export function ShoeInfo({route}: ShoesInfoProps) {
     const { item } = route.params;
+    const {favorites, toggleFavorite} = useFavorites()
+
+    const isFavorite = !!favorites[item.name]
 
     const shareImage = async () =>{
         Share.share({ message:'Check ces sneakers elles sont top!', title:'Skeakers' });
     }
+
+    const saveData = async () => {
+        toggleFavorite(item.name)
+    }
+
 
     return (
         <ScrollView style={styles.mainContainer}>
@@ -43,8 +53,8 @@ export function ShoeInfo({route}: ShoesInfoProps) {
                 <TouchableOpacity style={[styles.ShareContainer, styles.shadow]} onPress={() => shareImage() }>
                     <Ionicons name="share-outline" size={30}/>
                 </TouchableOpacity>
-                <TouchableOpacity style={[styles.likeContainer, styles.shadow]} >
-                    <Ionicons name="star-outline" size={30}/>
+                <TouchableOpacity style={[styles.likeContainer, styles.shadow]} onPress={() => saveData()}>
+                    <Ionicons name={isFavorite ? "star" : "star-outline"} size={30}/>
                 </TouchableOpacity>
             </View>
             <ResellInfo/>
