@@ -28,8 +28,6 @@
     "react-native-ionicons": "^4.6.5",
     "react-native-raw-bottom-sheet": "^2.2.0",
     "typescript": "^4.6.3",
-    "react-native-web": "~0.18.9",
-    "react-dom": "18.1.0",
     "@expo/webpack-config": "^0.17.2"
   },
   "devDependencies": {
