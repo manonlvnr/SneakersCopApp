@@ -18,8 +18,6 @@ export const FavoriteContextProvider = ({children}: PropsWithChildren) => {
         if (data) {
           setFavorites(JSON.parse(data))
         }
-
-        console.log(data);
       })
   }, [])
 
