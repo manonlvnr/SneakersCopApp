@@ -7,44 +7,44 @@
         "link": "https://nike.com"
     },
     {
-        "retailerName": "Nike",
+        "retailerName": "Adidas",
         "type": "Achat",
-        "logo": "https://assets.stickpng.com/images/580b57fcd9996e24bc43c4f3.png",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Adidas_Logo.svg/1000px-Adidas_Logo.svg.png",
         "available": false,
-        "link": "https://nike.com"
+        "link": "https://www.adidas.fr"
     },
     {
-        "retailerName": "Nike",
+        "retailerName": "Kikikickz",
         "type": "Achat",
-        "logo": "https://assets.stickpng.com/images/580b57fcd9996e24bc43c4f3.png",
+        "logo": "https://www.lemonde.fr/codespromo/static/shop/39196/logo/code-promotionnel-kikikickz.png",
         "available": false,
-        "link": "https://nike.com"
+        "link": "https://kikikickz.com/"
     },
     {
-        "retailerName": "Nike",
+        "retailerName": "Wethenew",
+        "type": "Achat",
+        "logo": "https://s3-eu-west-1.amazonaws.com/tpd/logos/5c741846c666770001962f39/0x0.png",
+        "available": true,
+        "link": "https://wethenew.com/"
+    },
+    {
+        "retailerName": "Stockx",
+        "type": "Achat",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/9/95/Stockx_logo.png",
+        "available": true,
+        "link": "https://stockx.com/"
+    },
+    {
+        "retailerName": "Flightclub",
         "type": "Achat",
         "logo": "https://assets.stickpng.com/images/580b57fcd9996e24bc43c4f3.png",
         "available": true,
-        "link": "https://nike.com"
+        "link": "https://www.flightclub.com/"
     },
     {
-        "retailerName": "Nike",
+        "retailerName": "New Balance",
         "type": "Achat",
-        "logo": "https://assets.stickpng.com/images/580b57fcd9996e24bc43c4f3.png",
-        "available": true,
-        "link": "https://nike.com"
-    },
-    {
-        "retailerName": "Nike",
-        "type": "Achat",
-        "logo": "https://assets.stickpng.com/images/580b57fcd9996e24bc43c4f3.png",
-        "available": true,
-        "link": "https://nike.com"
-    },
-    {
-        "retailerName": "Nike",
-        "type": "Achat",
-        "logo": "https://assets.stickpng.com/images/580b57fcd9996e24bc43c4f3.png",
+        "logo": "https://logo-marque.com/wp-content/uploads/2020/09/New-Balance-Logo-1972-2006.png",
         "available": true,
         "link": "https://nike.com"
     }

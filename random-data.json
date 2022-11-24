@@ -4,8 +4,8 @@
         "price": 210,
         "image": "https://cdn.shopify.com/s/files/1/2358/2817/products/NikeDunkLowSE85NeptuneGreen_W_1600x.png?v=1660038828",
         "releaseDate": "2023-10-20",
-        "colorName": "Oatmeal",
-        "colorHex": "#FA6530",
+        "colorName": "Green Glow",
+        "colorHex": "#15F08A",
         "resell": "bad"
         },
         {
@@ -31,35 +31,35 @@
         "price": 130,
         "image": "https://cdn.shopify.com/s/files/1/2358/2817/products/Adidas-Forum-Low-Black-White-1_540x.png?v=1651654475",
         "releaseDate": "2023-10-22",
-        "colorName": "Sky",
-        "colorHex": "#7CD0DB",
+        "colorName": "Sweet Black",
+        "colorHex": "#1C1C1C",
         "resell": "bad"
         },
         {
-            "name": "Adidas Yeezy 700",
-            "price": 109,
-            "image": "https://cdn.shopify.com/s/files/1/2358/2817/products/yeezy-700-wave-runner-solid-grey-101579_540x.png?v=1639393949",
-            "releaseDate": "2023-10-20",
-            "colorName": "Sky",
-            "colorHex": "#7CD0DB",
-            "resell": "good"
+        "name": "Adidas Yeezy 700",
+        "price": 109,
+        "image": "https://cdn.shopify.com/s/files/1/2358/2817/products/yeezy-700-wave-runner-solid-grey-101579_540x.png?v=1639393949",
+        "releaseDate": "2023-10-20",
+        "colorName": "Particle Grey",
+        "colorHex": "#9AA7AD",
+        "resell": "good"
         },
         {
-            "name": "New Balance 2002R",
-            "price": 220,
-            "image": "https://cdn.shopify.com/s/files/1/2358/2817/products/new-balance-2002r-ganni-turtledove_600x.png?v=1654167659",
-            "releaseDate": "2023-10-23",
-            "colorName": "Sky",
-            "colorHex": "#7CD0DB",
-            "resell": "bad"
+        "name": "New Balance 2002R",
+        "price": 220,
+        "image": "https://cdn.shopify.com/s/files/1/2358/2817/products/new-balance-2002r-ganni-turtledove_600x.png?v=1654167659",
+        "releaseDate": "2023-10-23",
+        "colorName": "Mint Foam",
+        "colorHex": "#83E6CC",
+        "resell": "bad"
         },
         {
-            "name": "New Balance 2002",
-            "price": 80,
-            "image": "https://flipklub.com/data/uploads/2021/06/flipklub-new-balance-2002r-salehe-bembury-water-be-the-guide.png",
-            "releaseDate": "2023-10-24",
-            "colorName": "Sky",
-            "colorHex": "#7CD0DB",
-            "resell": "very good"
+        "name": "New Balance 2002",
+        "price": 80,
+        "image": "https://flipklub.com/data/uploads/2021/06/flipklub-new-balance-2002r-salehe-bembury-water-be-the-guide.png",
+        "releaseDate": "2023-10-24",
+        "colorName": "Celestine Blue",
+        "colorHex": "#3A8BB9",
+        "resell": "very good"
         }
     ]
