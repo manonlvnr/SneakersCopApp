@@ -12,7 +12,7 @@
         "name": "Nike Air Zoom Pegasus",
         "price": 290,
         "image": "https://static.nike.com/a/images/t_default/87c194e8-3c2b-49b3-b1bf-1b5659b76e24/custom-nike-air-zoom-pegasus-flyease-by-you.png",
-        "releaseDate": "2023-10-20",
+        "releaseDate": "2023-10-22",
         "colorName": "Snow",
         "colorHex": "#CED9D9",
         "resell": "bad"
@@ -30,7 +30,7 @@
         "name": "Adidas Forum Low",
         "price": 130,
         "image": "https://cdn.shopify.com/s/files/1/2358/2817/products/Adidas-Forum-Low-Black-White-1_540x.png?v=1651654475",
-        "releaseDate": "2023-10-20",
+        "releaseDate": "2023-10-22",
         "colorName": "Sky",
         "colorHex": "#7CD0DB",
         "resell": "bad"
@@ -48,7 +48,7 @@
             "name": "New Balance 2002R",
             "price": 220,
             "image": "https://cdn.shopify.com/s/files/1/2358/2817/products/new-balance-2002r-ganni-turtledove_600x.png?v=1654167659",
-            "releaseDate": "2023-10-20",
+            "releaseDate": "2023-10-23",
             "colorName": "Sky",
             "colorHex": "#7CD0DB",
             "resell": "bad"
@@ -57,7 +57,7 @@
             "name": "New Balance 2002",
             "price": 80,
             "image": "https://flipklub.com/data/uploads/2021/06/flipklub-new-balance-2002r-salehe-bembury-water-be-the-guide.png",
-            "releaseDate": "2023-10-20",
+            "releaseDate": "2023-10-24",
             "colorName": "Sky",
             "colorHex": "#7CD0DB",
             "resell": "very good"
