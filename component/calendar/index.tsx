@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { Agenda } from "react-native-calendars";
 import { RandomSneakersJSON } from "../../types";
 import { ShoeCard } from "../shoeCard";
-import { RandomSneakersJSON } from "../../types";
 
 
 export default function Calendar() {
