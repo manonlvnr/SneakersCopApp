@@ -1,10 +1,10 @@
 import { FlatList, StyleSheet, Text, View } from "react-native";
-import { RandomSneakersJSON } from "../../types";
-import { ShoeCard } from "../shoeCard";
+import { RandomSneakersJSON } from "../../../types";
+import { ShoeCard } from "../../shoeCard";
 
 
 
-const data = require('../../random-data.json') as RandomSneakersJSON[];
+const data = require('../../../random-data.json') as RandomSneakersJSON[];
 
 export function BestOfTheWeek() {
 

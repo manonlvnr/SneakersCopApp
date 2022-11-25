@@ -10,7 +10,7 @@ export function ResellInfo(item) {
                 <View style={styles.resellContainer}>
                     <Text style={styles.resellTitle}>Indice de resell</Text>
                     <View style={[styles.resellTextContainer, styles.shadow]}>
-                        <Ionicons name="ellipse" size={20}/> 
+                        <Ionicons name="ellipse" size={20} color={item.resellHex}/> 
                         <Text>{item.resell}</Text>
                     </View>
                 </View>

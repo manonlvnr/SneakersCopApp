@@ -121,6 +121,7 @@ const styles = StyleSheet.create({
         textTransform: 'uppercase',
         fontWeight: '800',
         fontSize: 25,
+        maxWidth: 150,
     },
     name: {
         paddingBottom: 8,

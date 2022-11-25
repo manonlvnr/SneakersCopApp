@@ -21,7 +21,7 @@ export function ShoeCard ({name, price, image, releaseDate, colorName, colorHex,
 
     const navigateToShoeInfo = () => {
         navigation.navigate('ShoeInfo', {
-            item: { name, price, image, releaseDate, colorName, colorHex, resell},
+            item: { name, price, image, releaseDate, colorName, colorHex, resell, resellHex},
         });
     };
 

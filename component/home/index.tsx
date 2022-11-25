@@ -2,7 +2,7 @@
 
 import React from "react";
 import { ScrollView, StyleSheet, View } from "react-native";
-import { BestOfTheWeek } from "../bestOfTheWeek";
+import { BestOfTheWeek } from "./bestOfTheWeek";
 import { BestResell } from "./bestResell";
 import { Header } from "./header";
 
