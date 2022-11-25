@@ -11,14 +11,6 @@ export function LikePanel() {
     const [downLike, setdownLike] = useState(false);
     const downLikeNumber = useMemo (()=>Random.getRandomBytes(1), []);
 
-    const[countup,setCountup]=useState(upLikeNumber);
-    const inc=()=>{
-        // const up: number = upLikeNumber;
-        // setCountup(up +1);
-        // var string = Buffer.from(upLikeNumber).toString();
-        // console.log('tata', string);
-    }
-
 
 
     return (

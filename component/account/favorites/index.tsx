@@ -1,6 +1,6 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { string } from "prop-types";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { View , FlatList, Text, StyleSheet} from "react-native";
 import { useFavorites } from "../../../context/favorites";
 import { RandomSneakersJSON } from "../../../types";
