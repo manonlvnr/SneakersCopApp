@@ -1,7 +1,7 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { string } from "prop-types";
 import { useContext, useEffect, useState } from "react";
-import { View , FlatList} from "react-native";
+import { View , FlatList, Text, StyleSheet} from "react-native";
 import { useFavorites } from "../../../context/favorites";
 import { RandomSneakersJSON } from "../../../types";
 import { ShoeCard } from "../../shoeCard";
@@ -25,15 +25,28 @@ export default function FavoritesList() {
        setFavoriteItems(arrayFav)
         },[favoriteContext.toggleFavorite])
     return (
-        <View>
-        <FlatList 
-            data={favoriteItems}
-            renderItem={({ item }) => {
-                return (
-                    <ShoeCard {...item}/>
-                )
-            }}
-        />
-    </View>
+        <View style={styles.container}>
+            <Text style={styles.name}>Mes Favoris :</Text>
+            <FlatList 
+                data={favoriteItems}
+                renderItem={({ item }) => {
+                    return (
+                        <ShoeCard {...item}/>
+                    )
+                }}
+            />
+        </View>
     );
 }
+
+const styles = StyleSheet.create({
+    container: {
+        paddingHorizontal: 10,
+    },
+    name: {
+        marginTop: 20,
+        fontSize: 25,
+        fontWeight: '900',
+        maxWidth: 200,
+    },
+});

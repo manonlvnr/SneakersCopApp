@@ -13,7 +13,7 @@ export function BestResell() {
                 horizontal
                 data={data}
                 renderItem={({ item }) => {
-                    if (item.resell == "good" || item.resell == "very good")  {
+                    if (item.resell == "Excellent Resell" || item.resell == "Bon Resell")  {
                     return (
                         <ShoeCard {...item} isDark/>
                     ) }

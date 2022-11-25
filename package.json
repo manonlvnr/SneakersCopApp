@@ -9,6 +9,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@expo/webpack-config": "^0.17.2",
     "@react-native-async-storage/async-storage": "^1.17.11",
     "@react-navigation/bottom-tabs": "^6.4.0",
     "@react-navigation/native": "^6.0.13",
@@ -21,14 +22,14 @@
     "expo-status-bar": "~1.4.2",
     "glamor": "^2.20.40",
     "glamorous": "^5.0.0",
+    "glamorous-native": "^2.0.0",
     "prop-types": "^15.8.1",
     "react": "^18.1.0",
     "react-native": "0.70.5",
     "react-native-calendars": "^1.1291.1",
     "react-native-ionicons": "^4.6.5",
     "react-native-raw-bottom-sheet": "^2.2.0",
-    "typescript": "^4.6.3",
-    "@expo/webpack-config": "^0.17.2"
+    "typescript": "^4.6.3"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"

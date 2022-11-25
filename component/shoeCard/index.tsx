@@ -12,10 +12,11 @@ interface  ShoeCardProps {
     colorName: string,
     colorHex: string,
     resell: string,
+    resellHex: string,
     isDark?: boolean
     } 
 
-export function ShoeCard ({name, price, image, releaseDate, colorName, colorHex, resell, isDark}: ShoeCardProps) {
+export function ShoeCard ({name, price, image, releaseDate, colorName, colorHex, resell, resellHex, isDark}: ShoeCardProps) {
     const navigation = useNavigation();
 
     const navigateToShoeInfo = () => {
@@ -33,7 +34,7 @@ export function ShoeCard ({name, price, image, releaseDate, colorName, colorHex,
                         <Text style={isDark ? [styles.colorNameDark, {color: colorHex }] : [styles.colorName, {color: colorHex }]}>{colorName}</Text>
                         <Text style={isDark ? styles.nameDark : styles.name}>{name}</Text>
                         <Text style={isDark ? styles.priceDark : styles.price}>{price} €</Text>
-                        <Text style={isDark ? styles.resellDark : styles.resell}><Ionicons name="ellipse" style={styles.icons}/>{resell}</Text>
+                        <Text style={isDark ? styles.resellDark : styles.resell}><Ionicons name="ellipse" color={resellHex}/>{resell}</Text>
                     </View>
             </View>
         </TouchableOpacity>

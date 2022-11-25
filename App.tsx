@@ -17,7 +17,7 @@ function NavigateHome() {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="Home"
+        name="HomeStack"
         component={Home}
         options={{ headerShown: false }}
       />

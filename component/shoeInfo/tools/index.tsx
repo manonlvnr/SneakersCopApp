@@ -21,6 +21,7 @@ export function Tools() {
                         ref={refRBSheet}
                         closeOnDragDown={true}
                         closeOnPressMask={true}
+                        height={600}
                         customStyles={{
                             wrapper: {
                                 backgroundColor: "rgba(0, 0, 0, 0.5)",

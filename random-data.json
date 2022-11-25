@@ -6,7 +6,8 @@
         "releaseDate": "2023-10-20",
         "colorName": "Green Glow",
         "colorHex": "#15F08A",
-        "resell": "bad"
+        "resell": "Moyen Resell",
+        "resellHex": "#F58C43"
         },
         {
         "name": "Nike Air Zoom Pegasus",
@@ -15,7 +16,8 @@
         "releaseDate": "2023-10-22",
         "colorName": "Snow",
         "colorHex": "#CED9D9",
-        "resell": "bad"
+        "resell": "Mauvais Resell",
+        "resellHex": "#BF0D0A"
         },
         {
         "name": "New Balance 550",
@@ -24,7 +26,8 @@
         "releaseDate": "2023-10-20",
         "colorName": "Sky",
         "colorHex": "#7CD0DB",
-        "resell": "very good"
+        "resell": "Excellent Resell",
+        "resellHex": "#2B30E6"
         },
         {
         "name": "Adidas Forum Low",
@@ -33,7 +36,8 @@
         "releaseDate": "2023-10-22",
         "colorName": "Sweet Black",
         "colorHex": "#1C1C1C",
-        "resell": "bad"
+        "resell": "Mauvais Resell",
+        "resellHex": "#BF0D0A"
         },
         {
         "name": "Adidas Yeezy 700",
@@ -42,7 +46,8 @@
         "releaseDate": "2023-10-20",
         "colorName": "Particle Grey",
         "colorHex": "#9AA7AD",
-        "resell": "good"
+        "resell": "Bon Resell",
+        "resellHex": "#00ffb0"
         },
         {
         "name": "New Balance 2002R",
@@ -51,7 +56,8 @@
         "releaseDate": "2023-10-23",
         "colorName": "Mint Foam",
         "colorHex": "#83E6CC",
-        "resell": "bad"
+        "resell": "Moyen Resell",
+        "resellHex": "#F58C43"
         },
         {
         "name": "New Balance 2002",
@@ -60,6 +66,7 @@
         "releaseDate": "2023-10-24",
         "colorName": "Celestine Blue",
         "colorHex": "#3A8BB9",
-        "resell": "very good"
+        "resell": "Excellent Resell",
+        "resellHex": "#2B30E6"
         }
     ]

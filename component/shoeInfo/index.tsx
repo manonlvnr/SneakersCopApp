@@ -1,11 +1,9 @@
-import { Alert, Image, ScrollView, Share, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Image, ScrollView, Share, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import {Ionicons} from '@expo/vector-icons';
 import { RetailersList } from "./retailersList";
 import { Tools } from "./tools";
 import { ResellInfo } from "./resellInfo";
 import { LikePanel } from "./likePanel";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import { useEffect, useState } from "react";
 import { useFavorites } from "../../context/favorites";
 
 
@@ -28,14 +26,13 @@ export function ShoeInfo({route}: ShoesInfoProps) {
         toggleFavorite(item.name)
     }
 
-
     return (
         <ScrollView style={styles.mainContainer}>
             <View style={styles.topContainer}>
                 <View style={styles.leftContainer}>
                     <Text style={styles.name}>{item.name}</Text>
                     <Text style={[styles.colorName, {color: item.colorHex }]}>{item.colorName}</Text>
-                    <Text style={styles.resell}><Ionicons name="ellipse"/>{item.resell}</Text>
+                    <Text style={styles.resell}><Ionicons name="ellipse" color={item.resellHex}/>{item.resell}</Text>
                 </View>
                 <View style={styles.rightContainer}>
                     <View style={styles.topText}>
@@ -57,7 +54,7 @@ export function ShoeInfo({route}: ShoesInfoProps) {
                     <Ionicons name={isFavorite ? "star" : "star-outline"} size={30}/>
                 </TouchableOpacity>
             </View>
-            <ResellInfo/>
+            <ResellInfo {...item}/>
             <Tools/>
             <RetailersList/>
         </ScrollView>

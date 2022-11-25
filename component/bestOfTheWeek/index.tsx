@@ -10,12 +10,11 @@ export function BestOfTheWeek() {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>LES PAIRES DE LA SEMAINE</Text>
+            <Text style={styles.title}>LES PAIRES DE LA <Text>SEMAINE</Text></Text>
             <FlatList 
                 horizontal
                 data={data}
                 renderItem={({ item }) => {
-                    const { name, price, image, releaseDate, colorName, colorHex, resell } = item;
                     return (
                         <ShoeCard {...item}/>
                     )

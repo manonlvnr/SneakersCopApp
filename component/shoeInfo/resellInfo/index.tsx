@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from "react-native";
 import {Ionicons} from '@expo/vector-icons';
 
 
-export function ResellInfo() {
+export function ResellInfo(item) {
     return (
         <View style={styles.mainContainer}>
             <Text style={styles.title}>INFORMATIONS SUR LE RESELL</Text>
@@ -11,14 +11,14 @@ export function ResellInfo() {
                     <Text style={styles.resellTitle}>Indice de resell</Text>
                     <View style={[styles.resellTextContainer, styles.shadow]}>
                         <Ionicons name="ellipse" size={20}/> 
-                        <Text>Bon resell</Text>
+                        <Text>{item.resell}</Text>
                     </View>
                 </View>
                 <View style={styles.priceContainer}>
                     <Text style={styles.priceTitle}>Estimations</Text>
                     <View style={[styles.priceTextContainer, styles.shadow]}>
                         <Ionicons name="cash-outline" size={20}/> 
-                        <Text>230€</Text>
+                        <Text>{item.price}€</Text>
                     </View>
                 </View>
             </View>
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
         padding: 20,
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'center',
+        justifyContent: 'space-evenly',
         alignItems: 'center',
         backgroundColor: '#fff'
     },
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
         padding: 20,
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'center',
+        justifyContent: 'space-evenly',
         alignItems: 'center',
         backgroundColor: '#fff'
     },
