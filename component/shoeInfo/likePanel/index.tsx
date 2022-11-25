@@ -15,7 +15,7 @@ export function LikePanel() {
 
     return (
         <View style={[styles.mainContainer, styles.shadow]}>
-            <TouchableOpacity onPress={() => {setupLike(!upLike); inc()}}>
+            <TouchableOpacity onPress={() => setupLike(!upLike)}>
                 {upLike ? (
                         <View style={styles.upContainer}>
                             <Ionicons name="thumbs-up" size={30} color="#00ffb0" style={styles.upIcon}/>
